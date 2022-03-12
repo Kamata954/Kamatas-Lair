@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body {
+background-color: #2b2957;
+color: #ffffff;
+font-size: 1.5em;
+font-weight: 400;
+font-family: "Yu Gothic";
+}
+
+h1 {
+color: ffffff#;
+text-align: center;
+}
+</style>
+<script>
+
+
+/**** Fun Stuff that you need to copy into your page ****/
+document.addEventListener("DOMNodeInserted", function () {
+  var LEEWAY = 200; // Amount of "leeway" pixels before latching onto the bottom.
+  
+  // Some obscene browser shit because making sense is for dweebs
+  var b = document.body;
+  var offset = b.scrollHeight - b.offsetHeight;
+  var scrollPos = (b.scrollTop+offset);
+  var scrollBottom = (b.scrollHeight - (b.clientHeight+offset));
+  
+  // If we are at the bottom, go to the bottom again.
+  if (scrollPos >= scrollBottom - LEEWAY) {
+    window.scrollTo(0,document.body.scrollHeight);
+  }
+  
+}, false);
+</script>
+<h1>
+TEXT HOOKER
+</h1>
+
+</head>
+</html>
